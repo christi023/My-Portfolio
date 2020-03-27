@@ -67,13 +67,14 @@
   transform: translate3d(0, 0, 0);
 }
 .menu-branding .portrait {
-  width: 270px;
+  width: 230px;
   height: 400px;
-  background: url('../img/portrait.jpg');
-  border-radius: 50%;
+  background: url("../img/portrait.jpg");
+  border-radius: 20%;
   border: solid 3px #eece1a;
   background-size: cover;
 }
+
 .menu .nav-item {
   transform: translate3d(600px, 0, 0);
   transition: all 0.5s ease-out;
@@ -124,7 +125,7 @@ body {
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 body#bg-img {
@@ -133,7 +134,7 @@ body#bg-img {
   background-size: cover;
 }
 body#bg-img:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -141,6 +142,11 @@ body#bg-img:after {
   height: 100%;
   z-index: -1;
   background: rgba(68, 68, 68, 0.9);
+}
+
+h3.bold {
+  color: yellow;
+  font-size: 30px;
 }
 
 h1,
@@ -204,16 +210,16 @@ main#home h1 {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr);
 }
 .about-info .bio-image {
   grid-area: bioimage;
   margin: auto;
-  border-radius: 50%;
+  border-radius: 20%;
   border: #eece1a 3px solid;
   width: 65%;
-  height: 95%;
+  height: 85%;
 }
 .about-info .bio {
   grid-area: bio;
@@ -347,7 +353,7 @@ main#home h1 {
   }
 
   .menu-branding .portrait {
-    background: url('../img/portrait.jpg');
+    background: url("../img/portrait.jpg");
     width: 140px;
     height: 350px;
     background-size: cover;
@@ -355,7 +361,7 @@ main#home h1 {
   }
 
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr;
   }
   .projects {
@@ -395,7 +401,7 @@ main#home h1 {
   .menu-branding .portrait {
     width: 120px;
     height: 250px;
-    background: url('../img/portrait.jpg');
+    background: url("../img/portrait.jpg");
     border-radius: 50%;
     border: solid 3px #eece1a;
     background-size: cover;
