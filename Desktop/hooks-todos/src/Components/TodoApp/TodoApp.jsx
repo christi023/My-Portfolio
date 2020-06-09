@@ -12,12 +12,19 @@ import TodoForm from '../TodoForm/TodoForm';
 import uuid from 'uuid/dist/v4';
 
 function TodoApp() {
-  const initialTodos = [
+  // saving todos
+  const initialTodos = JSON.parse(window.localStorage.getItem('todos') || '[]');
+  /* const initialTodos = [
     { id: 1, task: 'Clean House', completed: false },
     { id: 2, task: 'Create a Website ', completed: true },
     { id: 3, task: 'Take kids to football match ', completed: false },
-  ];
+  ];*/
   const [todos, setTodos] = useState(initialTodos);
+
+  useEffect(() => {
+    window.localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   // define our own function
   const addTodo = (newTodoText) => {
     setTodos([...todos, { id: uuid(), task: newTodoText, completed: false }]);
