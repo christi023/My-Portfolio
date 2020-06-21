@@ -1,0 +1,86 @@
+{
+	"name": "aesop",
+	"displayName": "Aesop",
+	"description": "An IDE-native suite for previewing Storybook.",
+	"version": "0.1.2",
+	"publisher": "async-aesop",
+	"repository": "https://github.com/oslabs-beta/aesop-for-storybook",
+	"icon": "resources/Aesop128x128.png",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.aesopAwaken",
+		"workspaceContains:**/node_modules/@storybook/core/*.json"
+	],
+	"main": "./dist/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.aesopAwaken",
+				"title": "Aesop Awaken"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Configuration",
+			"properties": {
+				"aesop.port": {
+					"type": "number",
+					"default": 8509,
+					"description": "Port number"
+				},
+				"aesop.host": {
+					"type": "string",
+					"default": "localhost",
+					"description": "Host address"
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "extension.aesopAwaken",
+				"key": "ctrl+k a",
+				"mac": "cmd+k a"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
+		"test-compile": "tsc -p ./",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.2",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.12.21",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"ts-loader": "^6.2.1",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"vscode-test": "^1.2.2",
+		"webpack": "^4.41.4",
+		"webpack-cli": "^3.3.10"
+	},
+	"dependencies": {
+		"npm": "^6.13.4",
+		"ps-node": "^0.1.6",
+		"vsce": "^1.71.0"
+	},
+	"__metadata": {
+		"id": "9ac31088-404b-468c-b442-2cd70dc7d298",
+		"publisherId": "75ef2d6f-cd73-49d3-b85c-a9ad6ad6d9b5",
+		"publisherDisplayName": "async-aesop"
+	}
+}

@@ -1,0 +1,85 @@
+{
+ "acceptedEulaVersions" : [
+  "1.3.1"
+ ],
+ "anonymousID" : "ff65ee43-141e-4634-8d9a-4746075410b3",
+ "autoExec" : true,
+ "autoExpand" : true,
+ "autocompletionMode" : 1,
+ "batchSize" : 50,
+ "cacheData" : {
+  "wtImage1LastModifiedDate" : "2019-05-03T10:16:17Z",
+  "wtRssLastModifiedDate" : "NotImplemented",
+  "wtText1LastModifiedDate" : "2020-02-04T11:05:06Z"
+ },
+ "checkForUpdates" : true,
+ "connections" : [
+  {
+   "connectionName" : "localMDB",
+   "credentials" : [
+    {
+     "databaseName" : "admin",
+     "enabled" : false,
+     "mechanism" : "SCRAM-SHA-1",
+     "userName" : "",
+     "userPasswordEncrypted" : ""
+    }
+   ],
+   "defaultDatabase" : "",
+   "isReplicaSet" : false,
+   "serverHost" : "localhost",
+   "serverPort" : 27017,
+   "ssh" : {
+    "askPassword" : false,
+    "enabled" : false,
+    "host" : "",
+    "method" : "publickey",
+    "passphraseEncrypted" : "",
+    "port" : 22,
+    "privateKeyFile" : "",
+    "publicKeyFile" : "",
+    "userName" : "",
+    "userPasswordEncrypted" : ""
+   },
+   "ssl" : {
+    "allowInvalidCertificates" : false,
+    "allowInvalidHostnames" : false,
+    "askPassphrase" : false,
+    "caFile" : "",
+    "crlFile" : "",
+    "pemKeyFile" : "",
+    "pemPassPhraseEncrypted" : "",
+    "sslEnabled" : false,
+    "useAdvancedOptions" : false,
+    "usePemFile" : false
+   },
+   "uuid" : "{b47f76f7-d314-4513-bd39-3ed7a8757fba}"
+  }
+ ],
+ "dbVersionsConnected" : [
+  "4.2.1"
+ ],
+ "disableConnectionShortcuts" : false,
+ "imported" : false,
+ "lineNumbers" : false,
+ "loadMongoRcJs" : false,
+ "minimizeToTray" : false,
+ "mongoTimeoutSec" : 10,
+ "programExitedNormally" : true,
+ "shellTimeoutSec" : 15,
+ "style" : "Native",
+ "textFontFamily" : "",
+ "textFontPointSize" : -1,
+ "timeZone" : 0,
+ "toolbars" : {
+  "connect" : true,
+  "exec" : true,
+  "explorer" : true,
+  "logs" : false,
+  "open_save" : true
+ },
+ "useHttps" : false,
+ "uuidEncoding" : 0,
+ "version" : "2.0",
+ "viewMode" : 1
+}
