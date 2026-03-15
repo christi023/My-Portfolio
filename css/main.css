@@ -69,7 +69,7 @@
 .menu-branding .portrait {
   width: 230px;
   height: 400px;
-  background: url("../img/portrait.jpg");
+  background: url("img/projects/portrait2.jpg");
   border-radius: 20%;
   border: solid 3px #eece1a;
   background-size: cover;
@@ -242,168 +242,73 @@ main#home h1 {
 
 .projects {
   display: grid;
-  grid-gap: 0.7rem;
+  grid-gap: 1.5rem; 
   grid-template-columns: repeat(3, 1fr);
 }
+
+.projects .item {
+  background: #444; 
+  border-bottom: #eece1a 5px solid;
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+}
+
 .projects img {
   width: 100%;
+  height: 250px;      
+  object-fit: cover;  
   border: 3px #fff solid;
+  display: block;
+  transition: all 0.5s ease-out;
 }
+
 .projects img:hover {
   opacity: 0.5;
   border-color: #eece1a;
-  transition: all 0.5s ease-out;
 }
 
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem;
-}
-.boxes div {
-  font-size: 2rem;
-  border: 3px #fff solid;
-  padding: 1.5rem 2.5rem;
-  margin-bottom: 3rem;
-  transition: all 0.5s ease-out;
-}
-.boxes div:hover {
-  padding: 0.5rem 1.5rem;
-  background: #eece1a;
-  color: #000;
-}
-.boxes div:hover span {
-  color: #000;
-}
-
-.btn,
-.btn-dark,
-.btn-light {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
-}
-.btn:hover,
-.btn-dark:hover,
-.btn-light:hover {
-  background: #eece1a;
-  color: #000;
-}
-
-.btn-dark {
-  background: black;
-  color: #fff;
-}
 
 .btn-light {
-  background: #c4c4c4;
-  color: #333;
-}
-
-#main-footer {
-  text-align: center;
+  background: #444;  
+  color: #fff;         
   padding: 1rem;
-  background: #2b2b2b;
-  color: #fff;
-  height: 60px;
+  margin: 0;           
+  flex-grow: 1;       
+  text-align: left;
 }
+
+.btn-light p {
+  font-size: 0.75rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.btn-light i {
+  margin-right: 5px;
+}
+
+
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1170px) {
+@media screen and (max-width: 950px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center;
-  }
-  main .lg-heading {
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0;
-  }
-  ul.menu-nav.show,
-  div.menu-branding.show {
-    transform: translate3d(0, 0, 0);
-  }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px;
-  }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0);
-  }
-
-  .menu-branding .portrait {
-    background: url("../img/portrait.jpg");
-    width: 140px;
-    height: 350px;
-    background-size: cover;
-    border-radius: 50%;
-  }
-
-  .about-info {
-    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr;
-  }
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 500px) {
-  main {
-    padding: 2rem;
-  }
-  main #home h1 {
-    margin-top: 10vh;
-  }
-  main .lg-heading {
-    margin-top: 1rem;
-    font-size: 5rem;
-  }
+@media screen and (max-width: 600px) {
   .projects {
     grid-template-columns: 1fr;
   }
-  .about-info .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    border: #eece1a 3px solid;
-    width: 50%;
-    height: 2400%;
-  }
-
-  .about-info .bio {
-    grid-area: bio;
-    font-size: 1.5rem;
-    padding: 130px;
-  }
-
-  .menu-branding .portrait {
-    width: 120px;
-    height: 250px;
-    background: url("../img/portrait.jpg");
-    border-radius: 50%;
-    border: solid 3px #eece1a;
-    background-size: cover;
+  
+  .projects img {
+    height: 200px; 
   }
 }
