@@ -1,4 +1,21 @@
+# Node.js dependencies
 node_modules
+
+# VS Code settings
 .vscode
+
+# Local config cache
 .config
 .3T
+
+# Local history / shell artifacts
+.bash_history
+.node_repl_history
+
+# Database tool artifacts
+.mongorc.js
+.dbshell
+.pgAdmin4*.log
+.pgAdmin4*.addr
+.pgAdmin4.startup.log
+
