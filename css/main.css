@@ -418,13 +418,10 @@ main#home h1 {
   /* Change 'center' to 'flex-start' to move text to the top, 
      then push it down with padding */
   justify-content: flex-start; 
-  padding-top: 45px; /* This pushes the links down away from the 'X' */
+  padding-top: 55px; /* This pushes the links down away from the 'X' */
   background: #373737;
   transform: translate3d(0, 100%, 0);
 }
-
-
-
  .menu-branding {
   height: 30vh;
   background: #444;    /* Solid slightly lighter grey */
@@ -495,5 +492,28 @@ main#home h1 {
     text-align: center;
   }
 
+  .menu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Keeps them starting from the top */
+    padding-top: 50px;          /* Pushes them down below the 'X' */
+    height: 75vh;                /* Gives the links more of the screen */
+  }
+
+ .menu-branding {
+  height: 20vh; /* Shorter branding area */
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #444;
+}
+  .menu .nav-link {
+    font-size: 1.5rem;           /* Scaled down to prevent text wrapping */
+    padding: 1rem 0;             /* Nice touchable spacing */
+  }
+
  
 }
+
+ 
