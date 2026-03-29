@@ -514,6 +514,31 @@ main#home h1 {
   }
 
  
+  /* Inside your 500px media query */
+
+.boxes {
+  flex-direction: column; /* Stacks the boxes vertically */
+  align-items: center;
+  width: 100%;
+}
+
+.boxes div {
+  font-size: 1.2rem;    /* Makes the text size manageable on mobile */
+  width: 90%;           /* Allows the box to fill most of the screen width */
+  padding: 1.5rem;      /* Reduced from 2.5rem so text has more room */
+  margin-bottom: 1.5rem; /* Tighter spacing between boxes */
+  word-wrap: break-word; /* Crucial: Forces the email to wrap if it's too long */
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+/* Specific fix for the long email address */
+.boxes div span, 
+.boxes div {
+  display: block; 
+  max-width: 100%;
+}
+
 }
 
  
