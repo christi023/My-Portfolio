@@ -1,8 +1,7 @@
 ﻿.menu-btn {
-  position: absolute;
-  z-index: 3;
-  right: 35px;
-  top: 35px;
+  /* Remove 'position: absolute' or 'fixed' from here! */
+  /* The header now handles the positioning */
+  z-index: 5;
   cursor: pointer;
   transition: all 0.5s ease-out;
 }
@@ -169,9 +168,17 @@ a {
 }
 
 header {
-  position: fixed;
-  z-index: 2;
+  position: fixed; /* Keeps the whole bar at the top */
+  z-index: 4;      /* High z-index to stay above everything */
   width: 100%;
+  height: 80px;    /* Give it a set height */
+  background: #444; /* MATCH THIS to your body background color */
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center; /* Vertically centers the button in the bar */
+  justify-content: flex-end; /* Pushes the button to the right */
+  padding-right: 35px;
 }
 
 .text-secondary {
@@ -179,7 +186,7 @@ header {
 }
 
 main {
-  padding: 4rem;
+  padding: 8rem 4rem 4rem 4rem; /* Top, Right, Bottom, Left */
   min-height: calc(100vh - 60px);
 }
 main .icons {
@@ -232,6 +239,30 @@ main#home h1 {
   border-bottom: #eece1a 5px solid;
 }
 
+/* 1. Remove the dots and the extra padding on the left */
+.about-info .job ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 2. Style the individual items and add spacing */
+.about-info .job li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(238, 206, 26, 0.1); /* Subtle divider line */
+}
+
+/* 3. Optional: Remove the divider from the last item */
+.about-info .job li:last-child {
+  border-bottom: none;
+}
+
+/* 4. Center the titles better */
+.about-info .job h3 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eece1a;
+}
 
 /* 1. The Container: Keeps the cards aligned in rows */
 .projects {
@@ -355,31 +386,72 @@ main#home h1 {
   }
   ul.menu-nav,
   div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0;
-  }
+  float: none;
+  width: 100%;
+  min-height: 0;
+  height: auto; /* Change from fixed heights to auto */
+}
   ul.menu-nav.show,
   div.menu-branding.show {
     transform: translate3d(0, 0, 0);
   }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px;
-  }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0);
-  }
 
-  .menu-branding .portrait {
-    background: url("img/projects/portrait2.jpg");
-    width: 140px;
-    height: 350px;
-    background-size: cover;
-    border-radius: 50%;
-  }
+  .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  z-index: 4;
+}
+
+.menu.show {
+  visibility: visible;
+}
+ /* Update this as well inside the same media query */
+.menu-nav {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Change 'center' to 'flex-start' to move text to the top, 
+     then push it down with padding */
+  justify-content: flex-start; 
+  padding-top: 45px; /* This pushes the links down away from the 'X' */
+  background: #373737;
+  transform: translate3d(0, 100%, 0);
+}
+
+
+
+ .menu-branding {
+  height: 30vh;
+  background: #444;    /* Solid slightly lighter grey */
+  transform: translate3d(0, -100%, 0);
+}
+
+.menu-btn {
+  z-index: 5;
+}
+/* 2. Stack branding and nav vertically and remove transparency */
+.menu-nav, 
+.menu-branding {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  float: none;
+  overflow: hidden;
+  opacity: 1; /* Changed from 0.9 to 1 to stop the "see-through" look */
+}
+
+/* Add this to prevent the "squish" in the branding area */
+.menu-branding h1, .menu-branding h2 {
+  font-size: 2rem; /* Make the branding text smaller on mobile */
+  line-height: 1.2;
+}
 
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
@@ -392,39 +464,36 @@ main#home h1 {
 
 @media screen and (max-width: 500px) {
   main {
-    padding: 2rem;
+     padding-top: 6rem; /* A bit less space on smaller phones */
   }
   main #home h1 {
     margin-top: 10vh;
   }
   main .lg-heading {
     margin-top: 1rem;
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
   .projects {
     grid-template-columns: 1fr;
   }
+   /* FIXED: Removed the 2400% height and fixed dimensions */
   .about-info .bio-image {
     grid-area: bioimage;
-    margin: auto;
+    margin: 0 auto 1rem auto; /* Centers image and adds bottom spacing */
     border-radius: 50%;
     border: #eece1a 3px solid;
-    width: 50%;
-    height: 2400%;
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
   }
 
+  /* FIXED: Reduced padding so text has room to breathe */
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem;
-    padding: 130px;
+    font-size: 1.1rem;
+    padding: 1rem; /* Changed from 130px to 1rem */
+    text-align: center;
   }
 
-  .menu-branding .portrait {
-    width: 120px;
-    height: 250px;
-    background: url("img/projects/portrait2.jpg");
-    border-radius: 50%;
-    border: solid 3px #eece1a;
-    background-size: cover;
-  }
+ 
 }
